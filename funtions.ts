@@ -43,8 +43,27 @@ const esPrimo = (num: number): boolean => {
 
 //// Reto 4
 
+const esFactorial = (num : number) : number => {
+    let factorial : number = num;
+    for(let i = num - 1; i > 0; i--){
+        factorial *= i; 
+    } return factorial
+}
+
+//// Reto 5
+const esBinario = (num : number) : string => {
+    let arraBinary : number[] = []; 
+
+    while(num >= 1){
+        arraBinary.unshift(num % 2)
+        num = Math.floor(num / 2)
+    } return `El número binario es ${arraBinary.join("")}`;
+}
+
 module.exports = {
     calArea,
     numRamdon,
     esPrimo,
+    esFactorial,
+    esBinario,
 }

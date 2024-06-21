@@ -36,8 +36,27 @@ var esPrimo = function (num) {
     }
     return true;
 };
+//// Reto 4
+var esFactorial = function (num) {
+    var factorial = num;
+    for (var i = num - 1; i > 0; i--) {
+        factorial *= i;
+    }
+    return factorial;
+};
+//// Reto 5
+var esBinario = function (num) {
+    var arraBinary = [];
+    while (num >= 1) {
+        arraBinary.unshift(num % 2);
+        num = Math.floor(num / 2);
+    }
+    return "El n\u00FAmero binario es ".concat(arraBinary.join(""));
+};
 module.exports = {
     calArea: calArea,
     numRamdon: numRamdon,
     esPrimo: esPrimo,
+    esFactorial: esFactorial,
+    esBinario: esBinario,
 };
