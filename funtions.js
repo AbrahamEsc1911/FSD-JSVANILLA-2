@@ -27,7 +27,17 @@ var numRamdon = function (cantNUm, numMin, numMax) {
     }
     return numArr;
 };
+//// Reto 3
+var esPrimo = function (num) {
+    if (num <= 1)
+        return false;
+    for (var i = 2; i < num; i++) {
+        return num % i === 0 ? false : true;
+    }
+    return true;
+};
 module.exports = {
     calArea: calArea,
-    numRamdon: numRamdon
+    numRamdon: numRamdon,
+    esPrimo: esPrimo,
 };

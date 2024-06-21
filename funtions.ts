@@ -1,6 +1,6 @@
 //// Reto 1
 
-const calArea = (data: string, radio: number, lado: number, base: number, altura : number): string => {
+const calArea = (data: string, radio: number, lado: number, base: number, altura: number): string => {
     let dataLC: string = data.toLowerCase();
     let msj: string;
     const pi: number = Math.round(Math.PI);
@@ -15,25 +15,36 @@ const calArea = (data: string, radio: number, lado: number, base: number, altura
         case "triangulo":
             msj = `${base * altura}`
             break;
-        default :
+        default:
             msj = "Its not correct"
             break;
     }
     return msj
-} 
+}
 
 //// Reto 2
 
-const numRamdon = (cantNUm : number, numMin : number, numMax : number) : Array<number> => {
-    let numArr : number[] = [];
-    for(let i = 0; i < cantNUm; i++){
+const numRamdon = (cantNUm: number, numMin: number, numMax: number): Array<number> => {
+    let numArr: number[] = [];
+    for (let i = 0; i < cantNUm; i++) {
         numArr.push(Math.round(Math.random() * (numMax - numMin) + numMin))
-   }
- return numArr
+    }
+    return numArr
 }
 
+//// Reto 3
+
+const esPrimo = (num: number): boolean => {
+    if (num <= 1) return false
+    for (let i = 2; i < num; i++) {
+        return num % i === 0 ? false : true;
+    } return true;
+}
+
+//// Reto 4
 
 module.exports = {
     calArea,
-    numRamdon
+    numRamdon,
+    esPrimo,
 }
