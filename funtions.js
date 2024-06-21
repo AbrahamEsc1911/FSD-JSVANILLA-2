@@ -51,7 +51,39 @@ var esBinario = function (num) {
         arraBinary.unshift(num % 2);
         num = Math.floor(num / 2);
     }
-    return "El n\u00FAmero binario es ".concat(arraBinary.join(""));
+    return "Del ".concat(num, " el n\u00FAmero binario es ").concat(arraBinary.join(""));
+};
+//// Reto 6
+var numCifras = function (num) {
+    var numArr = num.toString();
+    var caunter = 0;
+    for (var i = 0; i < numArr.length; i++) {
+        caunter += 1;
+    }
+    return "El ".concat(num, " tiene ").concat(caunter, " cifras");
+};
+//// Reto 7
+var cambioMoneda = function (euro, moneda) {
+    var strMoneda = moneda.toLowerCase();
+    var tasaCambio;
+    var yen = 170.51;
+    var dolar = 1.07;
+    var libras = 0.85;
+    switch (strMoneda) {
+        case "dolar":
+            tasaCambio = "Para ".concat(euro, " el cambio a dolar es: ").concat((euro * dolar).toFixed(2));
+            break;
+        case "yen":
+            tasaCambio = "Para ".concat(euro, " el cambio a yen es: ").concat((euro * yen).toFixed(2));
+            break;
+        case "libras":
+            tasaCambio = "Para ".concat(euro, " el cambio a libras es: ").concat((euro * libras).toFixed(2));
+            break;
+        default:
+            tasaCambio = "No tenemos cambio para ese tipo de moneda";
+            break;
+    }
+    return tasaCambio;
 };
 module.exports = {
     calArea: calArea,
@@ -59,4 +91,6 @@ module.exports = {
     esPrimo: esPrimo,
     esFactorial: esFactorial,
     esBinario: esBinario,
+    numCifras: numCifras,
+    cambioMoneda: cambioMoneda,
 };
