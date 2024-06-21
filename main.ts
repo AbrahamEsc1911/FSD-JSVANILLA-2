@@ -27,5 +27,9 @@ console.log(funtionsVanilla.cambioMoneda(354, "libRAs"))
 console.log(funtionsVanilla.cambioMoneda(2634, "YeN"))
 console.log(funtionsVanilla.cambioMoneda(12234, "DolAr"))
 
+console.log(funtionsVanilla.arraNum(7))
+console.log(funtionsVanilla.arraNum(9))
+console.log(funtionsVanilla.arraNum(2))
+
 
 

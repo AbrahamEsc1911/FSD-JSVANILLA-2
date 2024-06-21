@@ -93,6 +93,17 @@ const cambioMoneda = (euro : number, moneda : string) : string => {
     return tasaCambio;
 }
 
+//// Reto 8
+const arraNum = (numArray : number) : string => {
+    let arrData : number[] = [];
+    let sumCont : number = 0;
+    for(let i = 0; i < numArray; i++){
+        arrData.push(Math.round(Math.random() * 10))
+    }   for(let x = 0; x < arrData.length; x++){
+            sumCont += (arrData[x])
+    } return `el array es ${arrData} y la suma de los valores del array es ${sumCont}`
+}
+
 
 module.exports = {
     calArea,
@@ -102,4 +113,5 @@ module.exports = {
     esBinario,
     numCifras,
     cambioMoneda,
+    arraNum,
 }

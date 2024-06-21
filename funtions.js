@@ -85,6 +85,18 @@ var cambioMoneda = function (euro, moneda) {
     }
     return tasaCambio;
 };
+//// Reto 8
+var arraNum = function (numArray) {
+    var arrData = [];
+    var sumCont = 0;
+    for (var i = 0; i < numArray; i++) {
+        arrData.push(Math.round(Math.random() * 10));
+    }
+    for (var x = 0; x < arrData.length; x++) {
+        sumCont += (arrData[x]);
+    }
+    return "el array es ".concat(arrData, " y la suma de los valores del array es ").concat(sumCont);
+};
 module.exports = {
     calArea: calArea,
     numRamdon: numRamdon,
@@ -93,4 +105,5 @@ module.exports = {
     esBinario: esBinario,
     numCifras: numCifras,
     cambioMoneda: cambioMoneda,
+    arraNum: arraNum,
 };
