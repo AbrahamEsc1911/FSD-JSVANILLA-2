@@ -31,5 +31,8 @@ console.log(funtionsVanilla.arraNum(7))
 console.log(funtionsVanilla.arraNum(9))
 console.log(funtionsVanilla.arraNum(2))
 
+console.log(funtionsVanilla.primoAleatorio(2))
+console.log(funtionsVanilla.primoAleatorio(4))
+
 
 

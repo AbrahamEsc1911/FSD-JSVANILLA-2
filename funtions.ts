@@ -37,55 +37,57 @@ const numRamdon = (cantNUm: number, numMin: number, numMax: number): number[] =>
 const esPrimo = (num: number): boolean => {
     if (num <= 1) return false
     for (let i = 2; i < num; i++) {
-        return num % i === 0 ? false : true;
+        if(num % i === 0){
+            return false
+        } 
     } return true;
 }
 
 //// Reto 4
 
-const esFactorial = (num : number) : number => {
-    let factorial : number = num;
-    for(let i = num - 1; i > 0; i--){
-        factorial *= i; 
+const esFactorial = (num: number): number => {
+    let factorial: number = num;
+    for (let i = num - 1; i > 0; i--) {
+        factorial *= i;
     } return factorial
 }
 
 //// Reto 5
-const esBinario = (num : number) : string => {
-    let arraBinary : number[] = []; 
-    while(num >= 1){
+const esBinario = (num: number): string => {
+    let arraBinary: number[] = [];
+    while (num >= 1) {
         arraBinary.unshift(num % 2)
         num = Math.floor(num / 2)
     } return `Del ${num} el número binario es ${arraBinary.join("")}`;
 }
 
 //// Reto 6
-const numCifras = (num : number) : string => {
-    let numArr : string = num.toString();
-    let caunter : number = 0;
-    for(let i = 0; i < numArr.length; i++){
+const numCifras = (num: number): string => {
+    let numArr: string = num.toString();
+    let caunter: number = 0;
+    for (let i = 0; i < numArr.length; i++) {
         caunter += 1
     }
     return `El ${num} tiene ${caunter} cifras`;
 }
 
 //// Reto 7
-const cambioMoneda = (euro : number, moneda : string) : string => {
-    let strMoneda : string = moneda.toLowerCase()
-    let tasaCambio : string;
-    const yen : number = 170.51;
-    const dolar : number = 1.07;
-    const libras : number = 0.85;
-    switch(strMoneda){
+const cambioMoneda = (euro: number, moneda: string): string => {
+    let strMoneda: string = moneda.toLowerCase()
+    let tasaCambio: string;
+    const yen: number = 170.51;
+    const dolar: number = 1.07;
+    const libras: number = 0.85;
+    switch (strMoneda) {
         case "dolar":
             tasaCambio = `Para ${euro} el cambio a dolar es: ${(euro * dolar).toFixed(2)}`;
-        break;
+            break;
         case "yen":
             tasaCambio = `Para ${euro} el cambio a yen es: ${(euro * yen).toFixed(2)}`;
-        break;
+            break;
         case "libras":
             tasaCambio = `Para ${euro} el cambio a libras es: ${(euro * libras).toFixed(2)}`;
-        break;
+            break;
         default:
             tasaCambio = "No tenemos cambio para ese tipo de moneda"
             break;
@@ -94,15 +96,28 @@ const cambioMoneda = (euro : number, moneda : string) : string => {
 }
 
 //// Reto 8
-const arraNum = (numArray : number) : string => {
-    let arrData : number[] = [];
-    let sumCont : number = 0;
-    for(let i = 0; i < numArray; i++){
+const arraNum = (numArray: number): string => {
+    let arrData: number[] = [];
+    let sumCont: number = 0;
+    for (let i = 0; i < numArray; i++) {
         arrData.push(Math.round(Math.random() * 10))
-    }   for(let x = 0; x < arrData.length; x++){
-            sumCont += (arrData[x])
+    } for (let x = 0; x < arrData.length; x++) {
+        sumCont += (arrData[x])
     } return `el array es ${arrData} y la suma de los valores del array es ${sumCont}`
 }
+
+//// Reto 9
+const primoAleatorio = (ind: number): string => {
+    let numArrPri: number[] = [];
+    while (numArrPri.length < ind) {
+        let numAleatorio: number = Math.round(Math.random() * 100 + 1)
+        if (esPrimo(numAleatorio)) {
+            numArrPri.push(numAleatorio)
+        }
+    } return `El array completo es ${numArrPri} y el mayor es ${Math.max(...numArrPri)}`
+}
+
+
 
 
 module.exports = {
@@ -114,4 +129,5 @@ module.exports = {
     numCifras,
     cambioMoneda,
     arraNum,
+    primoAleatorio,
 }

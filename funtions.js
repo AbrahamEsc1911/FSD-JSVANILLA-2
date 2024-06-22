@@ -32,7 +32,9 @@ var esPrimo = function (num) {
     if (num <= 1)
         return false;
     for (var i = 2; i < num; i++) {
-        return num % i === 0 ? false : true;
+        if (num % i === 0) {
+            return false;
+        }
     }
     return true;
 };
@@ -97,6 +99,17 @@ var arraNum = function (numArray) {
     }
     return "el array es ".concat(arrData, " y la suma de los valores del array es ").concat(sumCont);
 };
+//// Reto 9
+var primoAleatorio = function (ind) {
+    var numArrPri = [];
+    while (numArrPri.length < ind) {
+        var numAleatorio = Math.round(Math.random() * 100 + 1);
+        if (esPrimo(numAleatorio)) {
+            numArrPri.push(numAleatorio);
+        }
+    }
+    return "El array completo es ".concat(numArrPri, " y el mayor es ").concat(Math.max.apply(Math, numArrPri));
+};
 module.exports = {
     calArea: calArea,
     numRamdon: numRamdon,
@@ -106,4 +119,5 @@ module.exports = {
     numCifras: numCifras,
     cambioMoneda: cambioMoneda,
     arraNum: arraNum,
+    primoAleatorio: primoAleatorio,
 };
