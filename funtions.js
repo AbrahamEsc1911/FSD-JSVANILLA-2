@@ -49,20 +49,20 @@ var esFactorial = function (num) {
 //// Reto 5
 var esBinario = function (num) {
     var arraBinary = [];
-    while (num >= 1) {
-        arraBinary.unshift(num % 2);
-        num = Math.floor(num / 2);
+    var numData = num;
+    if (numData < 0) {
+        return "Del ".concat(num, " el n\u00FAmero binario es 0");
+    }
+    while (numData >= 1) {
+        arraBinary.unshift(numData % 2);
+        numData = Math.floor(numData / 2);
     }
     return "Del ".concat(num, " el n\u00FAmero binario es ").concat(arraBinary.join(""));
 };
 //// Reto 6
 var numCifras = function (num) {
     var numArr = num.toString();
-    var caunter = 0;
-    for (var i = 0; i < numArr.length; i++) {
-        caunter += 1;
-    }
-    return "El ".concat(num, " tiene ").concat(caunter, " cifras");
+    return num < 0 ? "el ".concat(num, " tiene ").concat(numArr.length - 1, " cifras") : "el ".concat(num, " tiene ").concat(numArr.length, " cifras");
 };
 //// Reto 7
 var cambioMoneda = function (euro, moneda) {

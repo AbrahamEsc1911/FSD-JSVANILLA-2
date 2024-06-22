@@ -55,20 +55,21 @@ const esFactorial = (num: number): number => {
 //// Reto 5
 const esBinario = (num: number): string => {
     let arraBinary: number[] = [];
-    while (num >= 1) {
-        arraBinary.unshift(num % 2)
-        num = Math.floor(num / 2)
+    let numData : number = num;
+    if(numData < 0){
+        return `Del ${num} el número binario es 0`
+    }
+    while (numData >= 1) {
+        arraBinary.unshift(numData % 2)
+        numData = Math.floor(numData / 2)
     } return `Del ${num} el número binario es ${arraBinary.join("")}`;
 }
 
 //// Reto 6
 const numCifras = (num: number): string => {
     let numArr: string = num.toString();
-    let caunter: number = 0;
-    for (let i = 0; i < numArr.length; i++) {
-        caunter += 1
-    }
-    return `El ${num} tiene ${caunter} cifras`;
+  return num < 0 ? `el ${num} tiene ${numArr.length - 1} cifras` : `el ${num} tiene ${numArr.length} cifras`
+
 }
 
 //// Reto 7
