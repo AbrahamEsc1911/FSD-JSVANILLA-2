@@ -1,14 +1,14 @@
 //// Reto 1
 var calArea = function (data, radio, lado, base, altura) {
-    var dataLC = data.toLowerCase();
+    var dataLC = data.toString().toLowerCase();
     var msj;
-    var pi = Math.round(Math.PI);
+    var pi = (Math.PI);
     switch (dataLC) {
         case "cuadrado":
             msj = "".concat(lado * lado);
             break;
         case "circulo":
-            msj = "".concat(pi * radio * radio);
+            msj = "".concat((pi * (radio * radio)).toFixed(2));
             break;
         case "triangulo":
             msj = "".concat(base * altura);

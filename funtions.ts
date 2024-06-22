@@ -1,16 +1,16 @@
 //// Reto 1
 
 const calArea = (data: string, radio: number, lado: number, base: number, altura: number): string => {
-    let dataLC: string = data.toLowerCase();
+    let dataLC: string = data.toString().toLowerCase();
     let msj: string;
-    const pi: number = Math.round(Math.PI);
+    const pi: number = (Math.PI)
 
     switch (dataLC) {
         case "cuadrado":
             msj = `${lado * lado}`;
             break;
         case "circulo":
-            msj = `${pi * radio * radio}`
+            msj = `${(pi * (radio * radio)).toFixed(2)}`
             break;
         case "triangulo":
             msj = `${base * altura}`
