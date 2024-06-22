@@ -110,6 +110,20 @@ var primoAleatorio = function (ind) {
     }
     return "El array completo es ".concat(numArrPri, " y el mayor es ").concat(Math.max.apply(Math, numArrPri));
 };
+//// Reto 10
+var dosArrays = function (arr1) {
+    var array1 = [];
+    var array2 = [];
+    var multiArray = [];
+    for (var i = 0; i < arr1; i++) {
+        array1.push(Math.round(Math.random() * 100 + 1));
+        array2.push(Math.round(Math.random() * 100 + 1));
+    }
+    for (var x = 0; x < arr1; x++) {
+        multiArray.push(array1[x] * array2[x]);
+    }
+    return "El array 1 es ".concat(array1, ", el array 2 es ").concat(array2, " y la mult de los arrays es ").concat(multiArray);
+};
 module.exports = {
     calArea: calArea,
     numRamdon: numRamdon,
@@ -120,4 +134,5 @@ module.exports = {
     cambioMoneda: cambioMoneda,
     arraNum: arraNum,
     primoAleatorio: primoAleatorio,
+    dosArrays: dosArrays,
 };

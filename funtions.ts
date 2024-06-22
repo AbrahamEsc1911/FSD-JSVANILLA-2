@@ -117,8 +117,20 @@ const primoAleatorio = (ind: number): string => {
     } return `El array completo es ${numArrPri} y el mayor es ${Math.max(...numArrPri)}`
 }
 
+//// Reto 10
+const dosArrays = (arr1 : number) : string => {
+    let array1 : number[] = []
+    let array2 : number[] = []
+    let multiArray : number[] = []
 
-
+    for(let i = 0; i < arr1; i++){
+        array1.push(Math.round(Math.random() * 100 + 1));
+        array2.push(Math.round(Math.random() * 100 + 1));
+    } for(let x = 0; x < arr1; x++){
+        multiArray.push(array1[x] * array2[x]);
+     }
+     return `El array 1 es ${array1}, el array 2 es ${array2} y la mult de los arrays es ${multiArray}`
+}
 
 module.exports = {
     calArea,
@@ -130,4 +142,5 @@ module.exports = {
     cambioMoneda,
     arraNum,
     primoAleatorio,
+    dosArrays,
 }
