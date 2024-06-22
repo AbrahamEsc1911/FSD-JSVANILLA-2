@@ -38,5 +38,10 @@ console.log(funtionsVanilla.primoAleatorio(4))
 console.log(funtionsVanilla.dosArrays(3))
 console.log(funtionsVanilla.dosArrays(4))
 
+console.log(funtionsVanilla.arrDigits(3, 5))
+console.log(funtionsVanilla.arrDigits(8, 7))
+console.log(funtionsVanilla.arrDigits(5, 4))
+console.log(funtionsVanilla.arrDigits(10, 3))
+
 
 

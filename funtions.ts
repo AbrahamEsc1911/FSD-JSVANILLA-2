@@ -132,6 +132,19 @@ const dosArrays = (arr1 : number) : string => {
      return `El array 1 es ${array1}, el array 2 es ${array2} y la mult de los arrays es ${multiArray}`
 }
 
+//// Reto 11
+const arrDigits = (ind : number, digit : number) : string => {
+    let arrDigit : number[] = [];
+    for(let i = 0; i < ind; i++){
+        arrDigit.push(Math.round(Math.random() * (300 - 1) + 1))
+    }
+    const arraDigitEspc : number[] = arrDigit.filter(num => num % 10 === digit)
+    if(arraDigitEspc.length === 0){
+        return `el Array original es ${arrDigit} y el correspondiente al digito ${digit} el nuevo array no tiene es digito.`
+    }
+    return `el Array original es ${arrDigit} y el correspondiente al digito ${digit} es: ${arraDigitEspc}`
+}
+
 module.exports = {
     calArea,
     numRamdon,
@@ -143,4 +156,5 @@ module.exports = {
     arraNum,
     primoAleatorio,
     dosArrays,
+    arrDigits,
 }

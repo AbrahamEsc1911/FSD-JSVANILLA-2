@@ -124,6 +124,18 @@ var dosArrays = function (arr1) {
     }
     return "El array 1 es ".concat(array1, ", el array 2 es ").concat(array2, " y la mult de los arrays es ").concat(multiArray);
 };
+//// Reto 11
+var arrDigits = function (ind, digit) {
+    var arrDigit = [];
+    for (var i = 0; i < ind; i++) {
+        arrDigit.push(Math.round(Math.random() * (300 - 1) + 1));
+    }
+    var arraDigitEspc = arrDigit.filter(function (num) { return num % 10 === digit; });
+    if (arraDigitEspc.length === 0) {
+        return "el Array original es ".concat(arrDigit, " y el correspondiente al digito ").concat(digit, " el nuevo array no tiene es digito.");
+    }
+    return "el Array original es ".concat(arrDigit, " y el correspondiente al digito ").concat(digit, " es: ").concat(arraDigitEspc);
+};
 module.exports = {
     calArea: calArea,
     numRamdon: numRamdon,
@@ -135,4 +147,5 @@ module.exports = {
     arraNum: arraNum,
     primoAleatorio: primoAleatorio,
     dosArrays: dosArrays,
+    arrDigits: arrDigits,
 };
