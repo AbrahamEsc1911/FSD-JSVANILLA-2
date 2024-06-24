@@ -66,11 +66,13 @@ var numCifras = function (num) {
 };
 //// Reto 7
 var cambioMoneda = function (euro, moneda) {
-    var strMoneda = moneda.toLowerCase();
+    var strMoneda = moneda.toString().toLowerCase();
     var tasaCambio;
     var yen = 170.51;
     var dolar = 1.07;
     var libras = 0.85;
+    if (euro < 0)
+        return "Alguno de los valores que has ingresado no lo podemos procesar";
     switch (strMoneda) {
         case "dolar":
             tasaCambio = "Para ".concat(euro, " el cambio a dolar es: ").concat((euro * dolar).toFixed(2));
@@ -82,7 +84,7 @@ var cambioMoneda = function (euro, moneda) {
             tasaCambio = "Para ".concat(euro, " el cambio a libras es: ").concat((euro * libras).toFixed(2));
             break;
         default:
-            tasaCambio = "No tenemos cambio para ese tipo de moneda";
+            tasaCambio = "Alguno de los valores que has ingresado no lo podemos procesar";
             break;
     }
     return tasaCambio;

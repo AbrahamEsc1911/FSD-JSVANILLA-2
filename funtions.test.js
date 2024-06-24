@@ -1,6 +1,5 @@
 
-const { isExpression } = require("typescript");
-const { calArea, numRamdon, esPrimo, esFactorial, esBinario, numCifras, cambioMoneda, arraNum, primoAleatorio, dosArrays, arrDigits } = require("./funtions")
+const { calArea, esPrimo, esFactorial, esBinario, numCifras, cambioMoneda} = require("./funtions")
 
 describe("Test to calculate area", () => {
     test("testing circle", () => {
@@ -25,7 +24,7 @@ describe("testin num is Prime", () => {
 });
 
 describe("testing is factorial", () => {
-    test("Any number", ()=>{
+    test("Any number", () => {
         const result = esFactorial(5);
         expect(result).toBe(120)
     })
@@ -36,11 +35,11 @@ describe("testing is factorial", () => {
 });
 
 describe("testing is Binary", () => {
-    test("convert intnum to binary", () =>{
+    test("convert intnum to binary", () => {
         const result = esBinario(12)
         expect(result).toBe("Del 12 el número binario es 1100")
     })
-    test("convert intnum to binary", () =>{
+    test("convert intnum to binary", () => {
         const result = esBinario(-28)
         expect(result).toBe("Del -28 el número binario es 0")
     })
@@ -65,3 +64,19 @@ describe("testing number of digits", () => {
     })
 });
 
+describe("testing the diferent changes", () => {
+    test("testing yuan", () => {
+        const result = cambioMoneda(345, "yen")
+        expect(result).toBe("Para 345 el cambio a yen es: 58825.95")
+    });
+    test("testing wrong data", () => {
+        const result = cambioMoneda(543, "doLLar")
+        expect(result).toBe("Alguno de los valores que has ingresado no lo podemos procesar")
+    });
+    test("testing negative number", () => {
+        const result = cambioMoneda(-34, "doLar")
+        expect(result).toBe("Alguno de los valores que has ingresado no lo podemos procesar")
+    });
+});
+
+describe()

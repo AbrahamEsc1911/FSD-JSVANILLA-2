@@ -74,11 +74,12 @@ const numCifras = (num: number): string => {
 
 //// Reto 7
 const cambioMoneda = (euro: number, moneda: string): string => {
-    let strMoneda: string = moneda.toLowerCase()
+    let strMoneda: string = moneda.toString().toLowerCase()
     let tasaCambio: string;
     const yen: number = 170.51;
     const dolar: number = 1.07;
     const libras: number = 0.85;
+    if(euro < 0) return "Alguno de los valores que has ingresado no lo podemos procesar"
     switch (strMoneda) {
         case "dolar":
             tasaCambio = `Para ${euro} el cambio a dolar es: ${(euro * dolar).toFixed(2)}`;
@@ -90,7 +91,7 @@ const cambioMoneda = (euro: number, moneda: string): string => {
             tasaCambio = `Para ${euro} el cambio a libras es: ${(euro * libras).toFixed(2)}`;
             break;
         default:
-            tasaCambio = "No tenemos cambio para ese tipo de moneda"
+            tasaCambio = "Alguno de los valores que has ingresado no lo podemos procesar"
             break;
     }
     return tasaCambio;
